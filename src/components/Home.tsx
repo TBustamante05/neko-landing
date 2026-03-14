@@ -9,13 +9,13 @@ export default function Home() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
+      {/* Scroller lateral izquierdo */}
       <motion.div
-        className="absolute h-full bottom-0 flex left-10 flex-col text-[#FFFFFF]/90 text-2xl font-bold tracking-tighter gap-[30px] infinite-scroll z-50"
+        className="absolute h-full bottom-0 flex left-2 sm:left-4 lg:left-10 flex-col text-[#FFFFFF]/90 text-lg sm:text-xl lg:text-2xl font-bold tracking-tighter gap-[20px] sm:gap-[30px] infinite-scroll z-50"
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
       >
-        {/* Primera copia */}
         {Array.from({ length: 6 }).map((_, index) => (
           <motion.p
             key={`left-1-${index}`}
@@ -41,14 +41,13 @@ export default function Home() {
         ))}
       </motion.div>
 
-      {/* Texto rotado en la esquina inferior derecha */}
+      {/* Scroller lateral derecho */}
       <motion.div
-        className="absolute h-full bottom-0 flex right-10 flex-col text-[#FFFFFF]/90 text-2xl font-bold tracking-tighter gap-[30px] infinite-scroll"
+        className="absolute h-full bottom-0 flex right-2 sm:right-4 lg:right-10 flex-col text-[#FFFFFF]/90 text-lg sm:text-xl lg:text-2xl font-bold tracking-tighter gap-[20px] sm:gap-[30px] infinite-scroll"
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
       >
-        {/* Primera copia */}
         {Array.from({ length: 6 }).map((_, index) => (
           <motion.p
             key={`right-1-${index}`}
@@ -60,7 +59,6 @@ export default function Home() {
             Neko Swag
           </motion.p>
         ))}
-
         {Array.from({ length: 6 }).map((_, index) => (
           <motion.p
             aria-hidden="true"
@@ -75,24 +73,27 @@ export default function Home() {
         ))}
       </motion.div>
 
-      {/* Contenedor para la imagen y decoraciones */}
+      {/* Contenedor imagen + decoraciones */}
       <motion.div
         className="absolute inset-0 pt-10 flex items-end justify-center h-full"
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
       >
-        {/* Imagen principal como elemento de referencia */}
-        <div className="relative h-full w-fit">
-          {/* Decoración superior - se posiciona por debajo de la imagen usando order */}
+        <div className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-full w-fit">
+          {/* Decoración superior (blanca) */}
           <motion.div
-            className="absolute top-15 left-0 bg-white/30 w-[300px] h-3/2 z-0 pointer-events-none"
+            className="absolute top-8 sm:top-10 lg:top-15 left-0
+                       w-[100px] sm:w-[160px] md:w-[220px] lg:w-[300px]
+                       h-full
+                       bg-white/30 z-0 pointer-events-none"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
             style={{ transformOrigin: "left" }}
-          ></motion.div>
+          />
 
+          {/* Imagen principal */}
           <motion.img
             src="/neko.png"
             alt="neko"
@@ -102,26 +103,30 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
           />
 
-          {/* Decoración inferior - se posiciona por debajo de la imagen */}
+          {/* Decoración inferior (roja) */}
           <motion.div
-            className="absolute bottom-0 right-0 bg-[#F21D2F]/50 w-[300px] h-1/2 z-20 pointer-events-none"
+            className="absolute bottom-0 right-0
+                       w-[100px] sm:w-[160px] md:w-[220px] lg:w-[300px]
+                       h-[80px] sm:h-[120px] md:h-[160px] lg:h-1/2
+                       bg-[#F21D2F]/50 z-20 pointer-events-none"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
             style={{ transformOrigin: "right" }}
-          ></motion.div>
+          />
         </div>
       </motion.div>
 
-      {/* Texto con efecto de superposición */}
+      {/* Título */}
       <motion.div
-        className="w-full relative top-10 z-10"
+        className="w-full relative top-20 z-10"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
       >
         <motion.h1
-          className="text-[19rem] text-white font-bold uppercase tracking-tighter text-center"
+          className="text-[clamp(7rem,15vw,19rem)] md:text-[15rem] lg:text-[clamp(4.5rem,15vw,19rem)] text-shadow-lg
+                     text-white font-bold uppercase leading-none tracking-tighter text-center"
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
