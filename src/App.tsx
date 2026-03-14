@@ -7,7 +7,7 @@ import Projects from './components/Projects'
 function App() {
 
   return (
-    <div>
+    <div className='bg-black'>
       <Navbar />
       <section id='home'>
         <Home />
