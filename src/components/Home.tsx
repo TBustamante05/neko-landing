@@ -11,7 +11,7 @@ export default function Home() {
     >
       {/* Scroller lateral izquierdo */}
       <motion.div
-        className="absolute h-full bottom-0 flex left-2 sm:left-4 lg:left-10 flex-col text-[#FFFFFF]/90 text-lg sm:text-xl lg:text-2xl font-bold tracking-tighter gap-[20px] sm:gap-[30px] infinite-scroll z-50"
+        className="absolute h-full bottom-0 hidden sm:flex left-2 sm:left-4 lg:left-10 flex-col text-[#FFFFFF]/90 text-lg sm:text-xl lg:text-2xl font-bold tracking-tighter gap-[20px] sm:gap-[30px] infinite-scroll z-50"
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
@@ -43,7 +43,7 @@ export default function Home() {
 
       {/* Scroller lateral derecho */}
       <motion.div
-        className="absolute h-full bottom-0 flex right-2 sm:right-4 lg:right-10 flex-col text-[#FFFFFF]/90 text-lg sm:text-xl lg:text-2xl font-bold tracking-tighter gap-[20px] sm:gap-[30px] infinite-scroll"
+        className="absolute h-full bottom-0 hidden sm:flex right-2 sm:right-4 lg:right-10 flex-col text-[#FFFFFF]/90 text-lg sm:text-xl lg:text-2xl font-bold tracking-tighter gap-[20px] sm:gap-[30px] infinite-scroll"
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
